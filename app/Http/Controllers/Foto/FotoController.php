@@ -23,7 +23,7 @@ class FotoController extends Controller
     {
         $album=$request->get('idAlbum');
         $fotos = Album::find($album)->fotos;
-        return view('foto/index',['fotos'=> $fotos]);
+        return view('foto/index',['fotos'=> $fotos, 'idAlbum'=> $album]);
     }
 
     /**
@@ -31,9 +31,10 @@ class FotoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(CrearFotoRequest $request)
     {
-        return view('foto/create');
+        $album=$request->get('idAlbum');
+        return view('foto/create',['idAlbum'=> $album]);
     }
 
     /**
@@ -44,10 +45,8 @@ class FotoController extends Controller
      */
     public function store(Request $request)
     {   
-        if($request->hasFile('foto'))
-            echo "SI IMAGEN";
-        else echo "NO IMAGEN";
-
+        
+        $album=$request['album'];
         $nombre= $request['name'];
         $ruta='/images/';
         $imagen=$request->file('foto');
@@ -56,11 +55,12 @@ class FotoController extends Controller
 
          Foto::create([
             'name' =>$imagen->getClientOriginalName(),
-            'ruta'=>getcwd().$ruta,$imagen->getClientOriginalName(),
-            'album_id'=>'4',
+            'album_id'=>$request['album'],
+            'ruta'=>$ruta.$imagen->getClientOriginalName()
+            
             ]);
 
-         return redirect("/foto?idAlbum=4");
+         return redirect("/foto?idAlbum=$album");
     }
 
     /**

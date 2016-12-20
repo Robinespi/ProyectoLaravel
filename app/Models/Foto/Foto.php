@@ -10,7 +10,7 @@ class Foto extends Model
     protected $primarykey= "idFoto";
 
      protected $fillable = [
-        'idFoto','name', 'ruta', 'album'
+        'idFoto','name', 'ruta', 'album_id'
     ];
 
 public function album(){

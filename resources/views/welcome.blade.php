@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Bienvenido a la fototeca echa con Laravel!
+                    Bienvenido a la fototeca hecha con Laravel!
                 </div>
             </div>
         </div>

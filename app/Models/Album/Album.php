@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
     protected $table = "albums";
-    protected $primarykey= "idAlbum";
+    protected $primarykey= "id";
     public $timestamps = false;
     
     protected $fillable = [
-        'idAlbum','name','foto', 'user_id'
+        'id','name','foto', 'user_id'
     ];
 
 

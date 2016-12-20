@@ -17,12 +17,12 @@ class CreateFotoTable extends Migration
             $table->increments('idFoto');
             $table->string('name');
             $table->string('ruta');
-            $table->integer('album')->unsigned();
+            $table->integer('album_id')->unsigned();
             
-            $table->foreign('album')->references('idAlbum')->on('albums');
+            $table->foreign('album_id')->references('id')->on('albums');
             $table->timestamps();
 
-            //$table->foreign('foto')
+            
 
 
         });

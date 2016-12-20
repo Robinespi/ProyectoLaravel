@@ -11,6 +11,12 @@
 {!!Form::open(['route'=> 'foto.store', 'method'=>'POST', 'enctype'=>'multipart/form-data'])!!}
 
 
+
+<div class="form-group"> 
+{!!form::label('Album')!!}
+<input type="text" name="album" value="{{$idAlbum}}">
+</div>
+
 <div class="form-group"> 
 {!!form::label('Nombre')!!}
 {!!form::text('name', null,['id'=>'name','class'=>'form-control','placeholder'=>'Nombre'])!!}

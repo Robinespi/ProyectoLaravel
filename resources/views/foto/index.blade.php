@@ -4,7 +4,7 @@
 
 <div class="row">
        <div class="col-lg-8 col-md-8 col-xs-12">
-       	<h3>Fotos del Album <a href='foto/create'><button class="btn btn-success">Nueva Foto</button></a></h3>
+       	<h3>Fotos del Album <a href="/foto/create?idAlbum={{$idAlbum}}"><button class="btn btn-success">Nueva Foto</button></a></h3>
        </div>
    </div>
 
@@ -19,7 +19,7 @@
 @foreach($fotos as $foto)
 	<tr>
 	<td>{{$foto->name}}</td>
-	<td><img src={{$foto->ruta}} width="400" height="400"></td>
+	<td><img src="{{$foto->ruta}}" width="400" height="400"></td>
 	</tr>
 
 @endforeach
